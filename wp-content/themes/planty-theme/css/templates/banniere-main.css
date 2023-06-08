@@ -1,0 +1,16 @@
+.banniere-main {
+    background-color:#ECE2DA;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 500px;
+    object-fit: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.titre-banniere-main{
+    display: flex;
+    align-items: center;
+    color: green;
+    font-size:xx-large;
+}

@@ -1,0 +1,35 @@
+
+.container-presentation{
+width: 100%;
+display: flex;
+flex-direction: row;
+
+}
+.container-texte{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+.image-presentation{
+width: 200px;
+}
+
+.container-texte .titre{
+color: #3B8E46;
+font-size: 30px;
+font-weight: 700;
+line-height: 36px;
+letter-spacing: 0em;
+align-items: left;
+
+}
+
+.container-texte .description{
+color: black;
+font-size: 16px;
+font-weight: 400;
+line-height: 19px;
+letter-spacing: 0em;
+text-align: left;
+
+}
