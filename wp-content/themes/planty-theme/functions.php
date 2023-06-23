@@ -12,11 +12,8 @@
  * design and stylesheet.
  * This will limit the width of all uploaded images and embeds.
  */
-
-include ("articles.php");
-$article=[];
 the_content();
-
+add_theme_support('menus');
 // Action qui permet de charger des scripts dans notre thème
 add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
 function theme_enqueue_styles(){
@@ -25,14 +22,7 @@ function theme_enqueue_styles(){
     // Chargement du css/theme.css pour nos personnalisations
     wp_enqueue_style('theme-style', get_stylesheet_directory_uri() . '/css/theme.css', array(), filemtime(get_stylesheet_directory() . '/css/theme.css'));
 
-     wp_enqueue_style('/css/templates/banniere-main.css', get_stylesheet_directory_uri() . '/css/templates/banniere-main.css', array(), filemtime(get_stylesheet_directory() . '/css/templates/banniere-main.css'));
-     wp_enqueue_style('image-presentation-shortcode', get_stylesheet_directory_uri() . '/css/shortcodes/image-presentation.css', array(), filemtime(get_stylesheet_directory() . '/css/shortcodes/image-presentation.css'));
 }
-
-
-
-/* SHORTCODES */
-
 
 add_shortcode('image_presentation', 'image_presentation_func');
 // Je génère le html retourné par mon shortcode
@@ -68,33 +58,8 @@ function image_presentation_func($atts)
 
     return $output;
 }
-
-add_shortcode('commande_container', 'commande_container_func');
-// Je génère le html retourné par mon shortcode
-function commande_container_func($atts)
-{
-    //Je récupère les attributs mis sur le shortcode
-    $atts = shortcode_atts(array(
-        'src' => '',
-    ), $atts, 'image_footer');
-
-    //Je commence à récupéré le flux d'information
-    ob_start();
-
-    if ($atts['src'] != "") {
-        ?>
-
-        <div class="container-img-footer" style="background-image: url(<?= $atts['src'] ?>)">
-            
-        </div>
-
-        <?php
-    }
-
-    //J'arrête de récupérer le flux d'information et le stock dans la fonction $output
-    $output = ob_get_contents();
-    ob_end_clean();
-
-    return $output;
-}
-
+function theme_support() {
+    register_nav_menu('Pincipal','Menu Header');
+  }
+  add_action( 'init', 'theme_support' );
+/* SHORTCODES */

@@ -6,6 +6,6 @@
  */
 ?>
 <footer id="site-footer" class="header-footer-group">
-		<a>Mention Legales</a>
+		<a href="#">Mention Legales</a>
 </footer><!-- #site-footer -->
 <?php wp_footer(); ?>

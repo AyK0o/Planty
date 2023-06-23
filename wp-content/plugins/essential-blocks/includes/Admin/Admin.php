@@ -258,7 +258,8 @@ class Admin {
                     'classes'     => 'updated put-dismiss-notice',
                     'start'       => $notices->time(),
                     'dismissible' => true,
-                    'do_action'   => 'wpdeveloper_notice_clicked_for_essential-blocks'
+                    'do_action'   => 'wpdeveloper_notice_clicked_for_essential-blocks',
+                    'display_if'  => !ESSENTIAL_BLOCKS_IS_PRO_ACTIVE
                 ]
             );
         }

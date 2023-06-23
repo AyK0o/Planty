@@ -4,7 +4,7 @@ namespace EssentialBlocks\blocks;
 use EssentialBlocks\Core\Block;
 
 class ShapeDivider extends Block {
-    protected $frontend_styles = ['essential-blocks-block-common'];
+    protected $frontend_styles = ['essential-blocks-frontend-style', 'essential-blocks-block-common'];
     /**
      * Unique name of the block.
      * @return string

@@ -34,6 +34,8 @@ class Scripts {
     public function block_editor_assets() {
         $this->is_gutenberg_editor = true;
 
+        global $pagenow;
+
         wpdev_essential_blocks()->assets->register( 'twenty-move', 'js/jquery.event.move.js' );
         wpdev_essential_blocks()->assets->register( 'image-loaded', 'js/images-loaded.min.js' );
         wpdev_essential_blocks()->assets->register( 'isotope', 'js/isotope.pkgd.min.js' );
@@ -45,7 +47,8 @@ class Scripts {
         wpdev_essential_blocks()->assets->register( 'controls-util', '../dist/controls.js', [
             'essential-blocks-blocks-localize'
         ] );
-        wpdev_essential_blocks()->assets->register( 'editor-script', '../dist/index.js', [
+
+        $editor_scripts_deps = [
             'essential-blocks-vendor-bundle',
             'essential-blocks-controls-util',
             'essential-blocks-twenty-move',
@@ -57,15 +60,21 @@ class Scripts {
             'essential-blocks-typedjs',
             'essential-blocks-slickjs',
             'essential-blocks-patterns'
-        ] );
+        ];
+
+        if ( $pagenow !== 'widgets.php' ) {
+            wpdev_essential_blocks()->assets->register( 'global-styles', '../lib/global-styles/dist/index.js' );
+            $editor_scripts_deps[] = 'essential-blocks-global-styles';
+        }
+
+        wpdev_essential_blocks()->assets->register( 'editor-script', '../dist/index.js', $editor_scripts_deps );
 
         //If vendor files has css and extists
         if ( file_exists( ESSENTIAL_BLOCKS_DIR_PATH . 'vendor-bundle/style.css' ) ) {
             wpdev_essential_blocks()->assets->register( 'admin-vendor-style', '../vendor-bundle/style.css' );
         }
 
-        // register styles
-        wpdev_essential_blocks()->assets->register( 'editor-css', '../dist/controls.css', [
+        $editor_styles_deps = [
             'essential-blocks-slick-style',
             'essential-blocks-fslightbox-style',
             'essential-blocks-twenty-twenty-style-image-comparison',
@@ -76,7 +85,15 @@ class Scripts {
             'essential-blocks-fontawesome',
             'essential-blocks-frontend-style',
             'essential-blocks-block-common'
-        ] );
+        ];
+
+        if ( $pagenow !== 'widgets.php' ) {
+            wpdev_essential_blocks()->assets->register( 'global-styles', '../lib/global-styles/dist/style.css' );
+            $editor_styles_deps[] = 'essential-blocks-global-styles';
+        }
+
+        // register styles
+        wpdev_essential_blocks()->assets->register( 'editor-css', '../dist/controls.css', $editor_styles_deps );
     }
 
     /**
@@ -110,16 +127,17 @@ class Scripts {
         wpdev_essential_blocks()->assets->enqueue( 'blocks-localize', 'js/eb-blocks-localize.js' );
 
         global $pagenow;
-
+        $editor_type = "";
         if ( $pagenow == 'post-new.php' || $pagenow == 'post.php' ) {
-            wpdev_essential_blocks()->assets->localize( 'blocks-localize', 'eb_conditional_localize', [
-                'editor_type' => 'edit-post'
-            ] );
+            $editor_type = 'edit-post';
         } elseif ( $pagenow == 'site-editor.php' || ( $pagenow == 'themes.php' && isset( $_GET['page'] ) && $_GET['page'] == 'gutenberg-edit-site' ) ) {
-            wpdev_essential_blocks()->assets->localize( 'blocks-localize', 'eb_conditional_localize', [
-                'editor_type' => 'edit-site'
-            ] );
+            $editor_type = 'edit-site';
+        } elseif ( $pagenow == 'widgets.php' ) {
+            $editor_type = 'edit-widgets';
         }
+        wpdev_essential_blocks()->assets->localize( 'blocks-localize', 'eb_conditional_localize', [
+            'editor_type' => $editor_type
+        ] );
 
         $eb_settings = get_option( 'eb_settings', [] );
         $googleFont  = ! empty( $eb_settings['googleFont'] ) ? $eb_settings['googleFont'] : 'true';
@@ -135,7 +153,7 @@ class Scripts {
             'rest_rootURL'    => get_rest_url(),
             'ajax_url'        => admin_url( 'admin-ajax.php' ),
             'nft_nonce'       => wp_create_nonce( 'eb-nft-nonce' ),
-            'is_pro_active'   => class_exists( 'EssentialBlocks\Pro\Plugin' ) ? "true" : "false",
+            'is_pro_active'   => ESSENTIAL_BLOCKS_IS_PRO_ACTIVE ? "true" : "false",
             'upgrade_pro_url' => ESSENTIAL_BLOCKS_UPGRADE_PRO_URL
         ];
         if ( is_admin() ) {
