@@ -23,7 +23,7 @@ function theme_enqueue_styles(){
     wp_enqueue_style('theme-style', get_stylesheet_directory_uri() . '/css/theme.css', array(), filemtime(get_stylesheet_directory() . '/css/theme.css'));
 
 }
-
+/* SHORTCODES */
 add_shortcode('image_presentation', 'image_presentation_func');
 // Je génère le html retourné par mon shortcode
 function image_presentation_func($atts)
@@ -59,7 +59,28 @@ function image_presentation_func($atts)
     return $output;
 }
 function theme_support() {
-    register_nav_menu('Pincipal','Menu Header');
+    
+    register_nav_menus(
+        array(
+            'Pincipal-logged-in','Menu Header'=>_('Pincipal-logged-in'),
+            
+            'Pincipal-logged-out','Menu Header2'=>_('Pincipal-logged-out')
+
+        ));
   }
   add_action( 'init', 'theme_support' );
-/* SHORTCODES */
+
+/* HOOK */
+
+function my_wp_nav_menu_args( $args = '' ) {
+    if( is_user_logged_in() ) {
+    // Logged in menu to display
+    $args['menu'] = 'logged-in';
+     
+    } else {
+    // Non-logged-in menu to display
+    $args['menu'] = 'logged-out';
+    }
+    return $args;
+    }
+add_filter( 'wp_nav_menu_args', 'my_wp_nav_menu_args' );

@@ -1,6 +1,4 @@
-body{
-    background-color: #FFFFFF;
-}
+
 
  /* HEADER */
  .header-inner.section-inner{
@@ -39,7 +37,7 @@ body{
     justify-content: flex-end;
     flex-direction: row;
 }
-.nav-header ul {
+ul.menu {
     margin: 0;
     color: #313332;
     background-color: #FFFF;
@@ -47,11 +45,12 @@ body{
     justify-content: center;
     flex-direction: row;
 }
-.nav-header ul li{
+ul.menu li{
     margin: 0;
+    list-style:none;
 }
 
-.nav-header ul li a{
+ul.menu li a{
     height: 80px;
     width: 150px;
     border-radius: 0px;
@@ -62,21 +61,31 @@ body{
     align-items: center;
 }
 
-.no-marker {
-    list-style:none;
-  }
-.nav-header ul li a.hover {
+ul.menu li.hover a {
     margin: 0;
     background-color: #DC9F96;
     text-decoration: none !important;
 }
-.nav-header ul li a.hover:hover {
+ul.menu li.hover a:hover {
     margin: 0;
     color: #FFFF !important;
     background-color: #D2776A;
     text-decoration: none !important;
 }
 /*  MAIN  */
+.equipe-container{
+    width: 80%;
+}
+#gouts-presentation{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#gouts-presentation img{
+    width: 400px;
+}
+
 section.elementor-section{
     width: 100%;
     padding: 0;
@@ -88,6 +97,53 @@ section.elementor-section{
     padding: 0px !important;
 }
 
+#btn-commande-gout-accueil{
+    font-size: large;
+    margin:30px 0px 30px 0px; 
+}
+.top-main .elementor-shape-bottom {
+    filter: drop-shadow( -3px -1px 4px brown) ;
+    }
+/*  SHORTCODES*/
+.container-presentation{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px 0px 20px 0px;
+    }
+    .container-texte{
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        align-items: center;
+    }
+    .image-presentation{
+    width: 150px;
+    }
+    .shortcodes-panel{
+        width: 70%;
+    }
+    .container-texte .titre{
+    color: #3B8E46;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 36px;
+    letter-spacing: 0em;
+    align-items: left;
+    margin: 10px;
+    }
+    
+    .container-texte .description{
+    color: black;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin: 10px;
+    }
 /*  FORM  */ 
 .contact-form{
     display: block;
@@ -95,6 +151,7 @@ section.elementor-section{
 .wpcf7-form{
     display: flex;
     width: 100%;
+
     justify-content: center;
 }
 .form-commande{
@@ -102,7 +159,7 @@ section.elementor-section{
     color: #FFFFFF;
     display: flex;
     flex-direction: column;
-   align-items: center;
+    align-items: center;
 }
 .form-commande hr{
     color: #FFFFFF;
@@ -122,9 +179,11 @@ width: 80%;
 
 .wpcf7 .form-commande .input-quantity {
     display: flex;
-    width: 100%;
+    width: 200px;
     flex-direction: row;
     height: 100px;
+    justify-content: space-around;
+
 }
 .wpcf7-spinner{
     display: none;
@@ -151,24 +210,32 @@ width: 80%;
 }
 
 .wpcf7 .form-commande .input-quantity input.wpcf7-number  {
+    DISPLAY: flex;
+    width: 80px;
+    border-radius: 3px;
+    margin-top: 10px;
+    height: 56px;
+}
+.input-quantity input.button-commande{
     display: flex;
-    width: 50%;
-    justify-content: flex-start;
-    margin:0;
-  }
+width: 100px;
+height: 56px;
+padding: 9px 0px 10px 0px;
+margin-top: 10px;
+justify-content: center;
+align-items: center;
+}
 .form-article{
     width: 100%;
     
 }
-.input-quantity input.wpcf7-submit{
-    display: flex;
-    width: 40%;
-    justify-content: flex-end;
-}
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   margin: 0;
+  background-color: #D2776A;
+  padding: 5px;
 }
 
 .form-commande-top{
@@ -177,8 +244,6 @@ input::-webkit-inner-spin-button {
 }
 .form-commande-panel{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
     width: 100%;
 }
 .img-order{
@@ -203,12 +268,14 @@ input::-webkit-inner-spin-button {
     height: 100%;
 }
 /*  FOOTER */
- #site-footer {
+.footer-top-visible .footer-nav-widgets-wrapper, .footer-top-hidden  #site-footer {
+    margin-top: 0px;
     padding: 10px;
     text-align: center;
     color: #6d6d6d;
     background-color: #FFFF !important;
  }
+
  .header-footer-group#site-footer
  a{
     color: #313332;
@@ -219,4 +286,7 @@ input::-webkit-inner-spin-button {
     color: #313332;
     text-align: center;
     text-decoration: none;
+ }
+ .wpcf7-response-output{
+
  }

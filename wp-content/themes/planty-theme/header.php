@@ -62,19 +62,14 @@
 				<div class="header-navigation-wrapper">
 
 							<header id="site-header" class="header-footer-group" role="banner">
-								<nav class="nav-header">
-									<ul>
-										<li class="no-marker">
-											<a href="contact">Contact</a>
-										</li>
-										<li class="no-marker">
-											<a href="#" class="admin-nav">admin</a>
-										</li>
-										<li class="no-marker">
-											<a href="commande" class="hover">Commander</a>
-										</li>
-									</ul>
-								</nav>
+								<?php 
+								wp_nav_menu( 
+									array( 
+										'theme_location' => 'Pincipal-logged-in',
+										
+										) 
+									 ); 
+								?>
 						</div><!-- .header-toggles -->
 						<?php
 					
