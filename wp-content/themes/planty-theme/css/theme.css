@@ -216,6 +216,14 @@ width: 80%;
     margin-top: 10px;
     height: 56px;
 }
+input.wpcf7-submit.boutton-commande-btm{
+    width: 200px;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    border-radius: 3px;
+}
 .input-quantity input.button-commande{
     display: flex;
 width: 100px;
