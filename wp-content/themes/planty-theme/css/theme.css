@@ -148,14 +148,8 @@ section.elementor-section{
 .contact-form{
     display: block;
 }
-.wpcf7-form{
-    display: flex;
-    width: 100%;
 
-    justify-content: center;
-}
 .form-commande{
-    width: 70%;
     color: #FFFFFF;
     display: flex;
     flex-direction: column;
@@ -224,7 +218,38 @@ input.wpcf7-submit.boutton-commande-btm{
     margin-top: 50px;
     border-radius: 3px;
 }
-.input-quantity input.button-commande{
+
+input[type="number"] {
+    height: 32px;
+    border-radius: 4px;
+    border: 1px solid #d8d8d8;
+    position: relative;
+    text-align: center;
+    width: 80px;
+    outline: none;
+  }
+  input[type="number"]::-webkit-inner-spin-button {
+    opacity: 1 !important;
+    background: #D2776A !important;
+    border-width: 0px;
+    margin: 0;
+    border-left: 1px solid #d8d8d8;
+    height: 34px;
+    width: 23px;
+    cursor: pointer;
+  }
+  
+
+#section-commande{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.input-quantity 
+input.button-commande{
     display: flex;
 width: 100px;
 height: 56px;
@@ -235,7 +260,10 @@ align-items: center;
 }
 .form-article{
     width: 100%;
-    
+    margin :10px;
+}
+.input-form-order-btm {
+    width: 450px;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -271,9 +299,11 @@ input::-webkit-inner-spin-button {
     width: 50%;
 }
 .form-order-botm hr{
+    display: flex;
+    justify-content: center;
     width: 1px;
-    margin: 30px 0px 30px 0px;
-    height: 100%;
+    padding: 30px 0px 30px 0px;
+    height: 350px;
 }
 /*  FOOTER */
 .footer-top-visible .footer-nav-widgets-wrapper, .footer-top-hidden  #site-footer {
@@ -294,7 +324,4 @@ input::-webkit-inner-spin-button {
     color: #313332;
     text-align: center;
     text-decoration: none;
- }
- .wpcf7-response-output{
-
  }
