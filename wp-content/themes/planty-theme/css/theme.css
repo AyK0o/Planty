@@ -210,6 +210,24 @@ width: 80%;
     display: flex;
     justify-content: flex-start;
 }
+button.btn-plus{
+    background-color: #DC9F96;
+    border-radius: 0px 3px 0px 0px;
+    
+}
+button.btn-plus:hover{
+    text-decoration: none;
+    background-color: #D2776A;
+}
+button.btn-moins{
+    background-color: #DC9F96;
+   border-radius: 0px 0px 3px 0px;
+}
+button.btn-moins:hover{
+    text-decoration: none;
+    background-color: #D2776A;
+}
+
 .button-commande .wpcf7-submit:hover{
     background-color: #D2776A;
 }
@@ -228,7 +246,7 @@ width: 80%;
     display: flex;
     justify-items: flex-start;
     width: 50px;
-    border-radius: 3px;
+    border-radius: 3px 0px 0px 3px;
     margin-top: 10px;
     height: 56px;
 }
@@ -346,6 +364,11 @@ align-items: center;
     display: flex;
     flex-direction: column;
     
+}
+.wpcf7-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 /*  FOOTER */
 .footer-top-visible .footer-nav-widgets-wrapper, .footer-top-hidden  #site-footer {
