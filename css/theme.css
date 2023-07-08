@@ -1,0 +1,532 @@
+
+
+ /* HEADER */
+ .header-inner.section-inner{
+    width: 100%;
+    margin-left: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-right: 0px;
+ }
+#site-header
+ {
+    width: 100%;
+}
+.header-navigation-wrapper{
+
+    display: flex;
+    justify-content: flex-end;
+}
+.site-logo{
+    padding-left: 50px; 
+}
+.header-footer-group
+#site-header{
+    width: 100%;
+    display: flex;
+    height: 80px;
+}
+
+.site-logo img{
+    width: 300px;
+
+}
+
+.header-navigation-wrapper{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+}
+ul.menu {
+    margin: 0;
+    color: #313332;
+    background-color: #FFFF;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+ul.menu li{
+    margin: 0;
+    list-style:none;
+}
+
+ul.menu li a{
+    color: #000;
+    font-size: 13px;
+    font-family: Syne;
+    font-weight: 700;
+    height: 80px;
+    width: 150px;
+    border-radius: 0px;
+    color: #313332;
+    background-color: #FFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+ul.menu li.hover a {
+    margin: 0;
+    background-color: #DC9F96;
+    text-decoration: none !important;
+}
+ul.menu li.hover a:hover {
+    margin: 0;
+    color: #FFFF !important;
+    background-color: #D2776A;
+    text-decoration: none !important;
+}
+/*  MAIN  */
+.equipe-container{
+    width: 80%;
+}
+#gouts-presentation{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#gouts-presentation img{
+    width: 400px;
+}
+
+section.elementor-section{
+    width: 100%;
+    padding: 0;
+}
+.entry-title{
+    display: none !important; 
+}
+.singular .entry-header{
+    padding: 0px !important;
+}
+
+#btn-commande-gout-accueil{
+    font-size: large;
+    margin:30px 0px 30px 0px; 
+}
+.top-main .elementor-shape-bottom 
+.elementor-shape-fill{
+    border-bottom:solid 5px red;
+}
+/*  SHORTCODES*/
+.container-presentation{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px 0px 20px 0px;
+    }
+    .container-texte{
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        align-items: center;
+    }
+    .image-presentation{
+    margin:0px 20px 0px 0px;
+    width: 150px;
+    }
+    .shortcodes-panel{
+        width: 70%;
+    }
+    .container-texte .titre{
+    color: #3B8E46;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 36px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin: 10px;
+    }
+    
+    .container-texte .description{
+    color: black;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin: 10px;
+    }
+/*  FORM  */ 
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+form{
+    color: #FFFF;
+}
+.contact-form{
+    color: black;
+    display: block;
+}
+
+.form-commande{
+    color: #FFFFFF !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form hr{
+    color: #FFFFFF;
+    border: solid 1px;
+    width: 100%;
+    margin: 30px 0px 30px 0px ;
+}
+.form-commande h1{ 
+    color: #FFFFFF;
+    text-align: center;
+    width: 100%;
+}
+.wpcf7 .form-commande label{
+text-align: left;
+width: 80%;
+}
+
+.wpcf7 .form-commande .input-quantity {
+    display: flex;
+    width: 200px;
+    flex-direction: row;
+    height: 100px;
+    justify-content: space-around;
+
+}
+.wpcf7-spinner{
+    display: none;
+}
+.button-commande .wpcf7-submit{
+    display: flex;
+    width: 40%;
+    text-align: center;
+    justify-content: center;
+    background-color: #DC9F96;
+}
+.form-commande h4{
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+}
+button.btn-plus{
+    background-color: #DC9F96;
+    border-radius: 0px 3px 0px 0px;
+    
+}
+button.btn-plus:hover{
+    text-decoration: none;
+    background-color: #D2776A;
+}
+button.btn-plus:focus{
+    text-decoration: none;
+}
+button.btn-moins{
+    background-color: #DC9F96;
+   border-radius: 0px 0px 3px 0px;
+}
+button.btn-moins:hover{
+    text-decoration: none;
+    background-color: #D2776A;
+}
+button.btn-moins:focus{
+    text-decoration: none;
+}
+
+
+.button-commande .wpcf7-submit:hover{
+    background-color: #D2776A;
+}
+.wpcf7-form-control.has-spinner.wpcf7-submit{
+    background-color: #DC9F96;
+}
+.wpcf7-form-control.has-spinner.wpcf7-submit:hover{
+    background-color: #D2776A;
+}
+.input-quantity{
+    display: flex;
+    width: 200px;
+    justify-content: space-between;
+}
+.input-quantity input.wpcf7-number  {
+    display: flex;
+    justify-items: flex-start;
+    width: 50px;
+    border-radius: 3px 0px 0px 3px;
+    margin-top: 10px;
+    height: 56px;
+}
+.form-commande-panel button {
+    display: flex;
+    width: 35px;
+    padding: 0;
+    justify-content: center;
+    height: 28px;
+}
+.nous-contacter{
+    color: black;
+}
+.nous-contacter h1{
+    text-align: center;
+font-size: 30px;
+font-family: Roboto;
+font-weight: 700;
+}
+.input-quantity-butt{
+    height: 56px;
+    width: 50px;
+    display: flex;
+    margin-top: 10px;
+}
+.submit-btm{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+input.wpcf7-submit.boutton-commande-btm{
+    width: 200px;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    border-radius: 3px;
+}
+
+input[type="number"] {
+    height: 32px;
+    border-radius: 4px;
+    border: 1px solid #d8d8d8;
+    position: relative;
+    text-align: center;
+    width: 50px;
+    outline: none;
+  }
+.form-commande-panel br {
+    display: none;
+}
+.form-commande-panel button {
+    display: flex;
+    width: 40px;
+    padding: 0;
+    justify-content: center;
+}
+
+#section-commande{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.input-quantity 
+input.button-commande{
+    display: flex;
+width: 100px;
+height: 56px;
+padding: 9px 0px 10px 0px;
+margin-top: 10px;
+justify-content: center;
+align-items: center;
+}
+.form-article{
+    width: 100%;
+    margin :10px;
+}
+.input-form-order-btm {
+    min-width: 500px;
+}
+
+.form-commande-panel{
+    display: flex;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
+.img-order{
+    width: 200px;
+}
+.form-order-botm{
+    display: flex;
+    text-align: left;
+    width: 100%;
+}
+.form-commande-left{
+    width: 50%;
+    padding-right: 20px;
+}
+.form-commande-right{
+    padding:  0px 0px 0px 20px;
+    width: 50%;
+}
+.form-order-botm hr{
+    
+    justify-content: center;
+    border: solid white 1px;
+    margin: 30px 0px 0px 0px;
+    width: 1px;
+    height: 400px;
+    
+}
+.form-article{
+    display: flex;
+    flex-direction: column;
+    
+}
+.wpcf7-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*  FOOTER */
+.footer-top-visible .footer-nav-widgets-wrapper, .footer-top-hidden  #site-footer {
+    margin-top: 0px;
+    padding: 10px;
+    text-align: center;
+    color: #6d6d6d;
+    background-color: #FFFF !important;
+ }
+
+ .header-footer-group#site-footer
+ a{
+    color: #313332;
+    text-align: center;
+ }
+ .header-footer-group#site-footer
+ a :hover{
+    color: #313332;
+    text-align: center;
+    text-decoration: none;
+ }
+ @media screen and (max-width: 1024px) and (min-width: 720px){
+    .image-presentation{
+        margin:0px 20px 0px 20px;
+        width: 150px;
+        }
+    .form-commande-panel{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .form-order-botm {
+        display: flex;
+        text-align: left;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .form-order-botm hr{
+    display: flex;
+    justify-content: center;
+    border: solid white 1px;
+    width: 100%;
+    padding :0px;
+    height: 1px;
+    }
+    .top-main{
+        width: 100%;
+    }
+    .header-navigation-wrapper{
+        display: none;
+    }
+    .form-article {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        margin:0;
+        align-items: center;
+    }
+    .form-commande-left{
+        padding-left: 20px;
+    }
+    .input-form-order-btm {
+        min-width: 300px;
+    }
+    .form-commande-right{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+       
+    }
+    .form-commande-left{
+        
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+      
+    }
+}
+@media screen and (max-width: 720px){
+    .image-presentation{
+        margin:0px 20px 0px 20px;
+        width: 150px;
+        }
+    .form-commande-left{
+        padding-left: 20px;
+    }
+    .form-commande-panel {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .form-order-botm {
+        display: flex;
+        text-align: left;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .form-order-botm hr{
+    display: flex;
+    justify-content: center;
+    border: solid white 1px;
+    width: 100%;
+    padding :0px;
+    height: 1px;
+    }
+    .top-main{
+        width: 100%;
+    }
+    .header-navigation-wrapper{
+        display: none;
+    }
+    .form-article {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin:0;
+        align-items: center;
+    }
+    .input-form-order-btm {
+        min-width: 300px;
+    }
+    .form-commande-right{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+       
+    }
+    .form-commande-left{
+        
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+      
+    }
+}
